@@ -103,7 +103,7 @@ function selection(populationPool) {
   );
 
   for (let i = 0; i < filteredPool.length; i++) {
-    let n = Math.floor(filteredPool[i].fitness * 100); // Arbitrary multiplier, we can also use monte carlo method
+    let n = Math.floor(filteredPool[i].fitness * 100);
     for (let j = 0; j < n; j++) {
       matingPool.push(filteredPool[i]);
     }
