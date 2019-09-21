@@ -46,12 +46,12 @@ function calculateFitness(populationPool) {
       }
       if (score / target.length === 1) {
         bestGenomeGA.innerHTML = element;
-        console.log(
-          "Found Target! at Genome " + i + " Generation " + generation
-        );
+        // console.log(
+        //   "Found Target! at Genome " + i + " Generation " + generation
+        // );
         const descriptionElem = document.getElementById("descriptionGA");
         descriptionElem.innerHTML = "Found target!";
-        console.log(performance.now());
+        // console.log(performance.now());
         population.endTime = performance.now();
         population.GATime =
           Math.floor(population.endTime - population.startTime) / 1000;
@@ -178,7 +178,7 @@ function initializeGeneticAlgorithm() {
   descriptionGA.innerHTML = "Closest match in Generation:";
 
   generatePopulation();
-  console.log(performance.now());
+  // console.log(performance.now());
   population.startTime = performance.now();
   const targetElemGA = document.getElementById("targetGA");
   targetElemGA.innerHTML = target;

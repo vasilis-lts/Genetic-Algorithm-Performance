@@ -27,8 +27,8 @@
     <div class="text-center header">
       <form autocomplete="off">
         <div class="flex">
-          <div class="flex-column">
-            <label>Enter target phrase:</label>
+          <div class="flex-column green">
+            <label><b>Enter target phrase:</b></label>
             <p id="inputWarning">(2 to 20 chars letters/spaces only)</p>
           </div>
           <input
@@ -51,12 +51,12 @@
         <br />
         <div>
           <div class="flex sb">
-            <h1 id="targetGA"></h1>
             <h3>(Target)</h3>
+            <h1 id="targetGA"></h1>
           </div>
           <div class="flex sb">
+            <p id="descriptionGA">Closest match in Generation:</p>
             <h1 id="bestGenomeGA"></h1>
-            <p id="descriptionGA" class="green">Closest match in Generation:</p>
           </div>
 
           <div class="text-left flex">
@@ -66,12 +66,12 @@
             </h1>
           </div>
           <h3 class="text-left mt2">
-          The genetic algorithm generates an array (Generation) of random words / phrases like the brute force algorithm, but
+          The genetic algorithm generates an array (Generation) of random words / phrases, like the brute force algorithm, but
           it also evaluates each element, based on how similar it is to the target word / phrase (fitness calculation). 
           <br> <br>
-          Then it takes all the more similar to the target elements and combines them, creating new children generations that look more like the target.
+          Then it takes all the more (fit) similar to the target elements and combines them, which results in creating new children arrays that look more and more like the target.
           <br> <br>
-          This is repeated until a child identical to the target is created.
+          This is repeated until an element identical to the target is created in one of those arrays.
 
           </h3>
         </div>
@@ -84,12 +84,12 @@
         <br />
         <div>
           <div class="flex sb">
-            <h1 id="targetBF"></h1>
             <h3>(Target)</h3>
+            <h1 id="targetBF"></h1>
           </div>
           <div class="flex sb">
+            <p id="descriptionBF" >Closest match in Generation:</p>
             <h1 id="bestGenomeBF"></h1>
-            <p id="descriptionBF" class="green">Closest match in Generation:</p>
           </div>
 
           <div class="text-left flex">
@@ -99,8 +99,11 @@
               </h1>
             </div>
             <h3 class="text-left mt2">
-              The brute force algorithm keeps generating arrays (Generations) of random words / phrases until an element identical to the target is created.
-              </h3>
+              The brute force algorithm keeps generating arrays (Generations) of random words / phrases until an element identical to the target is created in one of those arrays. Do you feel lucky?
+              <br><br><br>
+              <b>Warning!</b><br> It will take too long to find the target word / phrase if you input more than 3 letters!  
+            
+            </h3>
         </div>
       </div>
     </div>
