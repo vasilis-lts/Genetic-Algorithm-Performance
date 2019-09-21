@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: white;
+  background: black;
+  /* text-align: center; */
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.green {
+  color: #0f0;
+}
+.red {
+  color: red;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 5px 0;
+}
+.half-width {
+  width: 50%;
+}
+label {
+  font-size: 1.5rem;
+}
+.ml1 {
+  margin-left: 1rem;
+}
+.ml2 {
+  margin-left: 2rem;
+}
+.mt2 {
+  margin-top: 2rem;
+}
+.mt3 {
+  margin-top: 3rem;
+}
+.p1 {
+  padding: 1rem;
+}
+.sb {
+  justify-content: space-between;
+}
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+
+/* Components */
+.header {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer {
+  text-align: right;
+  padding: 0 1rem;
+}
+.footer a {
+  color: lightskyblue;
+}
+#geneticAlgorithm,
+#bruteForce {
+  height: 80vh;
+  text-align: center;
+  border: 4px solid #333;
+  padding-top: 0;
+}
+#targetInput {
+  background: #222;
+  font-size: 2rem;
+  font-weight: 500;
+  color: white;
+  border: none;
+  padding-left: 0.5rem;
+}
+#targetInput:focus {
+  outline: none;
+}
+#inputWarning {
+  margin: 0;
+}
+#vs {
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  top: 11vh;
+  margin-left: -50px;
+  text-align: center;
+  color: red;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px #777;
+}

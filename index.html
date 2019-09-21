@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Genetic Algorithm Performance</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="text-center header">
+      <form autocomplete="off">
+        <div class="flex">
+          <div class="flex-column">
+            <label>Enter target phrase:</label>
+            <p id="inputWarning">(2 to 20 chars letters/spaces only)</p>
+          </div>
+          <input
+            class="ml1"
+            type="text"
+            id="targetInput"
+            autofocus="true"
+            minlength="2"
+            maxlength="20"
+            required
+          />
+        </div>
+      </form>
+    </div>
+    <div class="flex">
+      <div id="geneticAlgorithm" class="half-width p1">
+        <h1>Genetic Algorithm</h1>
+        <hr />
+        <div><h1 id="currentGenomeGA"></h1></div>
+        <br />
+        <div>
+          <div class="flex sb">
+            <h1 id="targetGA"></h1>
+            <h3>(Target)</h3>
+          </div>
+          <div class="flex sb">
+            <h1 id="bestGenomeGA"></h1>
+            <p id="descriptionGA" class="green">Closest match in Generation:</p>
+          </div>
+
+          <div class="text-left flex">
+            <h1 class="mt2">
+              Generation <span id="generationGA"></span>
+              <span id="GATime"></span>
+            </h1>
+          </div>
+          <h3 class="text-left mt2">
+          The genetic algorithm generates an array (Generation) of random words / phrases like the brute force algorithm, but
+          it also evaluates each element, based on how similar it is to the target word / phrase (fitness calculation). 
+          <br> <br>
+          Then it takes all the more similar to the target elements and combines them, creating new children generations that look more like the target.
+          <br> <br>
+          This is repeated until a child identical to the target is created.
+
+          </h3>
+        </div>
+      </div>
+
+      <div id="bruteForce" class="half-width p1">
+        <h1>Brute Force Algorithm</h1>
+        <hr />
+        <div><h1 id="currentGenomeBF"></h1></div>
+        <br />
+        <div>
+          <div class="flex sb">
+            <h1 id="targetBF"></h1>
+            <h3>(Target)</h3>
+          </div>
+          <div class="flex sb">
+            <h1 id="bestGenomeBF"></h1>
+            <p id="descriptionBF" class="green">Closest match in Generation:</p>
+          </div>
+
+          <div class="text-left flex">
+              <h1 class="mt2">
+                Generation <span id="generationBF"></span>
+                <span id="BFTime"></span>
+              </h1>
+            </div>
+            <h3 class="text-left mt2">
+              The brute force algorithm keeps generating arrays (Generations) of random words / phrases until an element identical to the target is created.
+              </h3>
+        </div>
+      </div>
+    </div>
+    <div id="vs">
+      <h1>VS</h1>
+    </div>
+    <div class="footer">
+      <h2>Credits to <a href="https://www.youtube.com/watch?v=-jv3CgDN9sc" target="_blankk">Daniel Shiffman</a></h2>
+    </div>
+
+    <script type="text/javascript" src="./settings.js"></script>
+    <script type="text/javascript" src="./geneticAlgorithm.js"></script>
+    <script type="text/javascript" src="./bruteForce.js"></script>
+    <script type=text/javascript>
+
+      var targetInputElem = document.getElementById("targetInput");
+      document.querySelector("form").addEventListener("submit", function(e) {
+        e.preventDefault();
+        if (targetInputElem.value.match(/^[a-zA-Z\s]*$/)) {
+          target = targetInputElem.value;
+          initializeBruteForceAlgorithm();
+          initializeGeneticAlgorithm();
+        } else {
+          alert("Invalid input");
+          const inputWarningElem = document.getElementById("inputWarning");
+          inputWarningElem.classList.add("red");
+        }
+      });
+
+    </script>
+  
+  </body>
+</html>
