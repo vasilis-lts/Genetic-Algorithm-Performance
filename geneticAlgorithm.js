@@ -1,15 +1,11 @@
-var population = {};
+var geneticAlgorithm = {};
 var targetNotFound = true;
 
+// best element each generation
 var best;
 
-population.startTime;
-population.endTime;
-
-population.ElementPool;
-population.Genes = [];
-population.fitness = 0;
-population.Generation = 0;
+geneticAlgorithm.startTime;
+geneticAlgorithm.endTime;
 
 function createRandomPopulation() {
   var result = "";
@@ -52,11 +48,15 @@ function calculateFitness(populationPool) {
         const descriptionElem = document.getElementById("descriptionGA");
         descriptionElem.innerHTML = "Found target!";
         // console.log(performance.now());
-        population.endTime = performance.now();
-        population.GATime =
-          Math.floor(population.endTime - population.startTime) / 1000;
+        geneticAlgorithm.endTime = performance.now();
+        geneticAlgorithm.GATime =
+          Math.floor(geneticAlgorithm.endTime - geneticAlgorithm.startTime) /
+          1000;
+        geneticAlgorithm.GATime = parseFloat(geneticAlgorithm.GATime).toFixed(
+          2
+        );
         const GATimeElem = document.getElementById("GATime");
-        GATimeElem.innerHTML = `in ${population.GATime} seconds`;
+        GATimeElem.innerHTML = `in ${geneticAlgorithm.GATime} seconds`;
         targetNotFound = false;
       }
       populationPool[i].fitness = score / target.length;
@@ -179,7 +179,7 @@ function initializeGeneticAlgorithm() {
 
   generatePopulation();
   // console.log(performance.now());
-  population.startTime = performance.now();
+  geneticAlgorithm.startTime = performance.now();
   const targetElemGA = document.getElementById("targetGA");
   targetElemGA.innerHTML = target;
 }

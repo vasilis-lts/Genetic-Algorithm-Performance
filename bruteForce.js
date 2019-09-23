@@ -32,18 +32,13 @@ bruteForce.calculateFitness = function() {
       }
       if (score / target.length === 1) {
         console.log(element);
-        // console.log(
-        //   "BruteForce Found Target! at Genome " +
-        //     i +
-        //     " Generation " +
-        //     generation
-        // );
+
         const descriptionElem = document.getElementById("descriptionBF");
         descriptionElem.innerHTML = "Found target!";
-        // console.log(performance.now());
         bruteForce.endTime = performance.now();
         bruteForce.BFTime =
           Math.floor(bruteForce.endTime - bruteForce.startTime) / 1000;
+        bruteForce.BFTime = parseFloat(bruteForce.BFTime).toFixed(2);
         const BFTimeElem = document.getElementById("BFTime");
         BFTimeElem.innerHTML = `in ${bruteForce.BFTime} seconds`;
         bruteForce.targetNotFound = false;
