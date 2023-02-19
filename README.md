@@ -1,3 +1,3 @@
 # Genetic Algorithm Performance
 
-A UI that compares the performances of a Genetic Algorithm and a Brute Force Algorithm.
+A UI that compares the performances between a Genetic Algorithm and a Brute Force Algorithm.
